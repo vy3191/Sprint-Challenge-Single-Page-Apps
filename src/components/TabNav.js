@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React  from "react";
 import { Tab, Menu, Icon } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 
@@ -12,21 +12,21 @@ export default class TabNav extends React.Component {
 
     return (
       <Menu tabular>
-        <NavLink>
+        <NavLink to="/">
             <Menu.Item
               name='Home Page'
               active={activeItem === 'Home Page'}
               onClick={this.handleItemClick}
             />
         </NavLink>
-        <NavLink>
+        <NavLink to="characters">
             <Menu.Item
               name='Characters'
               active={activeItem === 'Characters'}
               onClick={this.handleItemClick}
             />
         </NavLink>
-        <NavLink>
+        <NavLink to="locations">
             <Menu.Item
               name='Locations'
               active={activeItem === 'Locations'}
