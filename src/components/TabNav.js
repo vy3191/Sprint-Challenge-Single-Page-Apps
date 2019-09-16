@@ -19,14 +19,14 @@ export default class TabNav extends React.Component {
               onClick={this.handleItemClick}
             />
         </NavLink>
-        <NavLink to="characters">
+        <NavLink to="/characters">
             <Menu.Item
               name='Characters'
               active={activeItem === 'Characters'}
               onClick={this.handleItemClick}
             />
         </NavLink>
-        <NavLink to="locations">
+        <NavLink to="/locations">
             <Menu.Item
               name='Locations'
               active={activeItem === 'Locations'}

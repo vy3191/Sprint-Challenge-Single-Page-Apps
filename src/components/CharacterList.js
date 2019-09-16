@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Icon, Image } from 'semantic-ui-react';
+import Load from './Load';
 import axios from 'axios';
 
 export default function CharacterList() {
@@ -16,11 +17,10 @@ export default function CharacterList() {
 
   return (
     <div className="characters-list">
-       {
+       { !pages ? <Load /> :
          pages.map( (page,index) => {
-            return(
-              
-                <section className="character-list grid-view">
+            return(              
+                <section className="character-list grid-view">                 
                   <Card>
                     <Image src={page.image} wrapped ui={false} />
                     <Card.Content>

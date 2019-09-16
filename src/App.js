@@ -5,6 +5,7 @@ import CharacterList from "./components/CharacterList";
 import WelcomePage from './components/WelcomePage';
 import {Route} from 'react-router-dom';
 import './style.css';
+import LocationsList from "./components/LocationsList.js";
 
 export default function App() {
   
@@ -16,6 +17,7 @@ export default function App() {
       <div>
         <Route exact path='/' component={WelcomePage} />
         <Route path='/characters' render={(props) => <CharacterList {...props} /> } />
+        <Route path='/locations' render={(props) => <LocationsList {...props} /> } />
       </div>
      
     </main>
