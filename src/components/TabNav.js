@@ -33,7 +33,7 @@ export default class TabNav extends React.Component {
               onClick={this.handleItemClick}
             />
         </NavLink>
-        <NavLink>
+        <NavLink to='/episodes'>
             <Menu.Item
               name='Episodes'
               active={activeItem === 'Episodes'}

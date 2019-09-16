@@ -8,7 +8,7 @@ export default function CharacterList() {
 
   useEffect(() => {
      const characters = async () => {
-        const response = await axios.get('https://rickandmortyapi.com/api/character/');
+        const response = await axios.get('http://rickandmortyapi.com/api/character/');
         console.log(response.data.results);
         setPages(response.data.results);
      }
