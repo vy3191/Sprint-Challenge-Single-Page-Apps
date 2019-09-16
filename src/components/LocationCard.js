@@ -1,15 +1,18 @@
 import React from "react";
 import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
-export default function LocationCard({ name, type, dimension, residents }) {   
+export default function LocationCard(props) {   
+    const {name, type, dimension, residents} = props.location;
     return (
       <Row>
         <Col sm="6">
           <Card body>
             <CardTitle>Location: {name}</CardTitle>
-            <CardText>{type}</CardText>
+            <CardText>Planet: {type}</CardText>
             <CardText>{dimension}</CardText>
-            <Button>Residents:{residents}</Button>
+            <div className="button">
+              <Button>Residents:{residents.length}</Button>
+            </div>
           </Card>
         </Col>        
       </Row>

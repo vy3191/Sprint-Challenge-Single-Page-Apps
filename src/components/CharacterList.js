@@ -14,7 +14,10 @@ export default function CharacterList() {
      }
      characters();      
   },[])
-
+  
+  if(pages.length === 0) {
+     return <h1>Loading Characters...</h1>
+  }
   return (
     <div className="characters-list">
        { !pages ? <Load /> :
