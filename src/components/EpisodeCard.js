@@ -1,17 +1,19 @@
 import React from "react";
 import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import CharacterList from "./CharacterList";
 
 export default function EpisodeCard(props) {   
-    const {name, type, dimension, residents} = props.location;
+    console.log(props.episode)
+    const {name,air_date, episode, characters} = props.episode;
     return (
       <Row>
         <Col sm="6">
           <Card body>
-            <CardTitle>Location: {name}</CardTitle>
-            <CardText>Planet: {type}</CardText>
-            <CardText>{dimension}</CardText>
+            <CardTitle>Episode: {name}</CardTitle>
+            <CardText>Air Date: {air_date}</CardText>
+            <CardText>Episode: {episode}</CardText>
             <div className="button">
-              <Button>Residents:{residents.length}</Button>
+              <Button>Characters:{characters.length}</Button>
             </div>
           </Card>
         </Col>        

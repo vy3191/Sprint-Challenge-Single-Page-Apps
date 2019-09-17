@@ -19,7 +19,7 @@ export default class TabNav extends React.Component {
               name='Home Page'
               active={activeItem === 'Home Page'}
               onClick={this.handleItemClick}
-            ><Icon name='home' />Home Paga</Menu.Item>
+            ><Icon name='home' />Home Page</Menu.Item>
         </NavLink>
         <NavLink to="/characters">
             <Menu.Item
