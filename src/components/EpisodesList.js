@@ -6,13 +6,16 @@ export default function EpisodesList() {
 
    const [episodes,setEpisodes] = useState([]);
 
-   useEffect( () => {
-      const getEpisodes = async () => {
-          const response = await axios.get("https://rick-api.herokuapp.com/api/episode");
-          console.log(response.results);
-          setEpisodes(response.results);
-      };
-      getEpisodes();
+   useEffect( () => {    
+      axios.get("https://rickandmortyapi.com/documentation/#get-all-episodes")
+            .then(response => {
+                    console.log(response)
+                })
+             .catch(err => {
+                   console.log(err)
+                })
+      
+   
    },[])
 
   //  if(episodes.length === 0) {

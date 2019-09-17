@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Icon, Image } from 'semantic-ui-react';
-import Load from './Load';
+import Loading from './Load';
 import axios from 'axios';
 
 export default function CharacterList() {
@@ -8,7 +8,7 @@ export default function CharacterList() {
 
   useEffect(() => {
      const characters = async () => {
-        const response = await axios.get('http://rickandmortyapi.com/api/character/');
+        const response = await axios.get('https://rickandmortyapi.com/api/character/');
         console.log(response.data.results);
         setPages(response.data.results);
      }
@@ -16,11 +16,17 @@ export default function CharacterList() {
   },[])
   
   if(pages.length === 0) {
-     return <h1>Loading Characters...</h1>
+     return (
+         <>
+           <span className="loading"><h1> Loading Characters <Loading /></h1></span>
+          
+         </>
+     )
+      
   }
   return (
     <div className="characters-list">
-       { !pages ? <Load /> :
+       { 
          pages.map( (page,index) => {
             return(              
                 <section className="character-list grid-view">                 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LocationCard from './LocationCard';
+import Loading from './Load';
 import axios from "axios";
 
 export default function LocationsList() {
@@ -13,7 +14,11 @@ export default function LocationsList() {
       getLocations();
    },[])
    if(locations.length === 0) {
-       return <h1>Loading Locations ....</h1>
+      return (
+         <>
+           <span className="loading"><h1> Loading Locations<Loading /></h1></span>          
+         </>    
+       )
    }
    return(
      <div className="locations-container">

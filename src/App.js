@@ -15,7 +15,7 @@ export default function App() {
       <Header />
       <TabNav />      
       <div>
-        <Route exact path='/' component={WelcomePage} />
+        <Route exact path='/' render={ (props) => <WelcomePage {...props}/>} />
         <Route path='/characters' render={(props) => <CharacterList {...props} /> } />
         <Route path='/locations' render={(props) => <LocationsList {...props} /> } />
         <Route path="/episodes" render={(props) => <EpisodesList  {...props}/> } />
